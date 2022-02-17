@@ -61,15 +61,15 @@ class TransaksiController extends Controller
 
         if ($transaction->save()) {
             $datetime2 = strtotime($transaction->tanggal_kembali) ;
-            $datenow = strtotime($transaction->tanggal_pinjam);
+            $datenow = strtotime(date('Y-m-d'));
             $durasi = ($datenow - $datetime2) / 86400 ;
             $durasi2 = ($durasi).'Hari';
            
             if ($datenow > $datetime2) {
                 'Terlambat';
             }
-            else {
-                echo "$durasi Hari";
+            if ($datenow ==$datetime2) {
+                $durasi2 = 'Kembalikan';
             }
 
             $transaction->update([

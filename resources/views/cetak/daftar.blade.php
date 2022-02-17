@@ -35,15 +35,14 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                @foreach ($daftar as $item)
+                            @foreach ($daftar as $item)
+                            <tr>      
                                 <td>{{$item->kode_barang}}</td>
                                 <td>{{$item->nama_barang}}</td>
                                 <td>{{$item->jumlah_barang}}</td>
-                                <td>{{$item->idr}}</td>
-                                @endforeach
-                               
+                                <td>{{$item->idr}}</td>                 
                             </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 
